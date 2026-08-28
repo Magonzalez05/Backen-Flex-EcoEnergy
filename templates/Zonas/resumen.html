@@ -1,0 +1,67 @@
+{% extends 'base.html' %}
+{% block content %}
+<h2>Resumen de consumo por zona</h2>
+<p class="text-muted">Datos agrupados desde zonas.json y dispositivos.json</p>
+
+<div class="row mb-4 text-center">
+    <div class="col-md-4">
+        <div class="card bg-light">
+            <div class="card-body">
+                <h6 class="text-success fw-bold">ZONAS</h6>
+                <h3>{{ total_zonas }}</h3>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="card bg-light">
+            <div class="card-body">
+                <h6 class="text-primary fw-bold">DISPOSITIVOS</h6>
+                <h3>{{ total_dispositivos }}</h3>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="card bg-warning bg-opacity-25">
+            <div class="card-body">
+                <h6 class="text-warning text-dark fw-bold">CONSUMO TOTAL</h6>
+                <h3>{{ total_consumo_general }} kWh</h3>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% if resumen %}
+    <div class="table-responsive">
+        <table class="table table-hover border">
+            <thead class="table-light">
+                <tr>
+                    <th>Zona</th>
+                    <th>Dispositivos</th>
+                    <th>Consumo</th>
+                    <th>Límite</th>
+                    <th>Estado</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for item in resumen %}
+                <tr>
+                    <td>{{ item.nombre }}</td>
+                    <td>{{ item.cantidad_dispositivos }}</td>
+                    <td>{{ item.consumo_total }} kWh</td>
+                    <td>{{ item.limite_kwh }} kWh</td>
+                    <td>
+                        {% if item.estado == 'LÍMITE SUPERADO' %}
+                            <span class="badge rounded-pill bg-danger text-white border border-danger">LÍMITE SUPERADO</span>
+                        {% else %}
+                            <span class="badge rounded-pill text-success border border-success bg-white">DENTRO DEL LÍMITE</span>
+                        {% endif %}
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+{% else %}
+    <div class="alert alert-warning">No hay zonas disponibles.</div>
+{% endif %}
+{% endblock %}

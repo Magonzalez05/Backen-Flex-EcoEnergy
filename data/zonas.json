@@ -1,22 +1,22 @@
 [
     {
         "id": 1,
-        "nombre": "Zona 1",
-        "limite_kwh": 50
-    },
-    {
-        "id": 2,
-        "nombre": "Zona 2",
-        "limite_kwh": 30
-    },
-    {
-        "id": 3,
-        "nombre": "Zona 3",
+        "nombre": "Administracion",
         "limite_kwh": 40
     },
     {
-        "id": 4,
-        "nombre": "Zona 4",
+        "id": 2,
+        "nombre": "Bodega",
         "limite_kwh": 50
+    },
+    {
+        "id": 3,
+        "nombre": "Produccion",
+        "limite_kwh": 200
+    },
+    {
+        "id": 4,
+        "nombre": "Zona ",
+        "limite_kwh": 100
     }
 ]

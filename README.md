@@ -4,7 +4,7 @@ API Back End del proyecto EcoEnergy, desarrollada con Python y Django.
 
 ## Descripción y objetivo
 
-> **Descripción provisional:** este repositorio corresponde a la etapa inicial del
+> **Descripción** este repositorio corresponde a la etapa inicial del
 > Back End de EcoEnergy. Aún no se ha definido formalmente el alcance funcional del
 > proyecto, por lo que el texto siguiente es un bosquejo preliminar y puede cambiar.
 

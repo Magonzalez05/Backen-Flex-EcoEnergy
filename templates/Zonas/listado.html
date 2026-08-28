@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% block content %}
+<h2>ZONAS DE CONSUMO</h2>
+<hr>
+{% if zonas %}
+    <div class="row">
+    {% for zona in zonas %}
+        <div class="col-md-4 mb-3">
+            <div class="card text-center shadow-sm">
+                <div class="card-body">
+                    <h5 class="card-title">{{ zona.nombre }}</h5>
+                    <p class="card-text">
+                        Límite: {{ zona.limite_kwh }} kWh<br>
+                        Dispositivos: {{ zona.cantidad_dispositivos }}
+                    </p>
+                    <a href="{% url 'detalle_zona' zona.id %}" class="btn btn-outline-dark">[ Ver detalle ]</a>
+                </div>
+            </div>
+        </div>
+    {% endfor %}
+    </div>
+{% else %}
+    <div class="alert alert-warning">No hay zonas disponibles.</div>
+{% endif %}
+{% endblock %}
