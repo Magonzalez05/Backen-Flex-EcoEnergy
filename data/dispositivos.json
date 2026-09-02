@@ -23,7 +23,7 @@
     {
         "id": 4,
         "nombre": "Refrigerador",
-        "consumo_kwh": 25.3,
+        "consumo_kwh": 1000,
         "zona_id": 1,
         "categoria_id": 4
     },
